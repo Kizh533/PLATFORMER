@@ -1126,7 +1126,7 @@ class GameCompleteView(arcade.View):
             "The game is over, thank you for playing!",
             SCREEN_WIDTH / 2,
             SCREEN_HEIGHT / 2,
-            arcade.color.WHITE,
+            arcade.color.GREEN,
             30,
             anchor_x="center",
         )
