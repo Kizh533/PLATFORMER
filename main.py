@@ -180,7 +180,7 @@ class EnemySpaceShip(Enemy):
         # Настраиваем родительский класс
         super().__init__("enemy_space_ship", "enemy_space_ship")
         self.type = 4
-        self.health = 500
+        self.health = 600
         self.enemy_score = 1000
 
 
