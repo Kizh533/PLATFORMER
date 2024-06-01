@@ -79,7 +79,7 @@ class Entity(arcade.Sprite):
         self.scale = CHARACTER_SCALING
 
         # Главный путь для загрузки текстур персонажей
-        main_path = f"C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/images/animated_characters/{name_folder}/{name_file}"
+        main_path = f"assets/resources/images/animated_characters/{name_folder}/{name_file}"
 
         self.idle_texture_pair = load_texture_pair(f"{main_path}_idle.png")
         self.jump_texture_pair = load_texture_pair(f"{main_path}_jump.png")
@@ -278,7 +278,7 @@ class MainMenu(arcade.View):
     def on_show_view(self):
         # Функция вызывается при переключении на этот режим просмотра (вид)
 
-        self.background = arcade.load_texture(f"C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/background/background1.jpg")
+        self.background = arcade.load_texture(f"assets/resources/background/background1.jpg")
 
     def on_draw(self):
         # Прорисовываем главное меню
@@ -384,11 +384,11 @@ class GameView(arcade.View):
         self.enemy_shoot_timer = 0
 
         # Загружаем звуки
-        self.collect_coin_sound = arcade.load_sound("C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/sounds/coin1.wav")
-        self.jump_sound = arcade.load_sound("C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/sounds/jump1.wav")
-        self.game_over = arcade.load_sound("C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/sounds/gameover1.wav")
-        self.shoot_sound = arcade.load_sound("C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/sounds/hurt5.wav")
-        self.hit_sound = arcade.load_sound("C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/sounds/hit5.wav")
+        self.collect_coin_sound = arcade.load_sound("assets/resources/sounds/coin1.wav")
+        self.jump_sound = arcade.load_sound("assets/resources/sounds/jump1.wav")
+        self.game_over = arcade.load_sound("assets/resources/sounds/gameover1.wav")
+        self.shoot_sound = arcade.load_sound("assets/resources/sounds/hurt5.wav")
+        self.hit_sound = arcade.load_sound("assets/resources/sounds/hit5.wav")
 
         # Фоновое изображение будет сохранено в этой переменной
         self.background = None
@@ -397,14 +397,14 @@ class GameView(arcade.View):
         # Настраиваем игру здесь. Также можем вызвать эту функцию, чтобы перезапустить игру с нового уровня.
 
         # Загружаем фоновое изображение
-        self.background = arcade.load_texture(f"C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/background/background{self.level}.jpg")
+        self.background = arcade.load_texture(f"assets/resources/background/background{self.level}.jpg")
 
         # Настраиваем камеры
         self.camera = arcade.Camera(self.window.width, self.window.height)
         self.gui_camera = arcade.Camera(self.window.width, self.window.height)
 
         # Имя Tile карты
-        map_name = f"C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/tiled_maps/map_{self.level}.json"
+        map_name = f"assets/resources/tiled_maps/map_{self.level}.json"
 
         # Параметры, относящиеся к конкретному слою для Titlemap
         # use_spatial_hash – Если установлено значение True, это сделает перемещение спрайта в SpriteList медленнее,
@@ -753,13 +753,13 @@ class GameView(arcade.View):
 
                 if self.level < 4:
                     bullet = arcade.Sprite(
-                        "C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/images/space_shooter/laserBlue01.png",
+                        "assets/resources/images/space_shooter/laserBlue01.png",
                         SPRITE_SCALING_LASER,
                     )
 
                 if self.level == 4:
                     bullet = arcade.Sprite(
-                        "C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/images/space_shooter/laserRed01.png",
+                        "assets/resources/images/space_shooter/laserRed01.png",
                         SPRITE_SCALING_LASER,
                     )
 
@@ -796,7 +796,7 @@ class GameView(arcade.View):
                         arcade.play_sound(self.shoot_sound)  # Проигрываем звук выстрела для космического корабля
 
                     bullet = arcade.Sprite(
-                        "C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/images/space_shooter/laserBlue01.png",
+                        "assets/resources/images/space_shooter/laserBlue01.png",
                         SPRITE_SCALING_LASER,
                     )
                     if enemy.type == 1:  # Стрельба роботов
@@ -862,7 +862,7 @@ class GameView(arcade.View):
             if enemy.type == 3:  # Стрельба големов
                 if self.enemy_can_shoot:
                     fire = arcade.Sprite(
-                        "C:/Users/banic/PycharmProjects/PLATFORMER/assets/resources/images/fire/fire.png",
+                        "assets/resources/images/fire/fire.png",
                         SPRITE_SCALING_FIRE,
                     )
 
